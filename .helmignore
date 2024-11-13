@@ -1,0 +1,7 @@
+*.iml
+.github/
+.git
+.idea
+CHANGELOG.md
+README.md
+/examples
