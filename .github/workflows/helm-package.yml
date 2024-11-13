@@ -14,6 +14,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Configure Git
         run: |
@@ -22,31 +24,6 @@ jobs:
 
       - name: Install Helm
         uses: azure/setup-helm@v4.2.0
-
-#      - name: Helm package
-#        run: helm package --version ${{ github.ref_name }} .
-#
-#      - name: Create release
-#        uses: actions/create-release@v1
-#        id: create_release
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          release_name: ${{ github.ref_name }}
-#          tag_name: ${{ github.ref_name }}
-#          body: Helm chart version ${{ github.ref_name }}
-#          draft: false
-#          prerelease: false
-#
-#      - name: Upload release asset
-#        uses: actions/upload-release-asset@v1
-#        with:
-#          upload_url: ${{ steps.create_release.outputs.upload_url }}
-#          asset_path: test-app-${{ github.ref_name }}.tgz
-#          asset_name: test-app-${{ github.ref_name }}.tgz
-#          asset_content_type: application/tar+gzip
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Release Helm chart
         uses: helm/chart-releaser-action@v1.6.0

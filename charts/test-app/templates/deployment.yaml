@@ -44,7 +44,7 @@ spec:
               protocol: TCP
           resources:
             requests:
-              cpu: 150m
+              cpu: 100m
               memory: 32Mi
           readinessProbe:
             httpGet:
@@ -59,6 +59,8 @@ spec:
               path: /
               port: 5678
           env:
+            - name: VERSION
+              value: {{ .Chart.Version }}
             - name: PORT
               value: "5678"
       terminationGracePeriodSeconds: 80
