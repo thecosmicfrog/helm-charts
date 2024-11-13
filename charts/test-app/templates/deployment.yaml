@@ -42,10 +42,6 @@ spec:
             - name: http
               containerPort: 5678
               protocol: TCP
-          resources:
-            requests:
-              cpu: 100m
-              memory: 32Mi
           readinessProbe:
             httpGet:
               path: /
