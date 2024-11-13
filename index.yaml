@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  test-app:
+  - apiVersion: v2
+    created: "2024-11-13T17:04:47.081495457Z"
+    description: Test app
+    digest: 7ea6e5075995744b95ba0522f2b8d6cad40b5f3f7b74fa46ababf0987aa983f0
+    name: test-app
+    urls:
+    - https://github.com/thecosmicfrog/test-app/releases/download/test-app-0.0.1/test-app-0.0.1.tgz
+    version: 0.0.1
+generated: "2024-11-13T17:04:47.081505325Z"
