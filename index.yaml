@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   test-app:
   - apiVersion: v2
+    created: "2024-11-15T17:35:23.180978079Z"
+    description: Test app
+    digest: fe620cee8c90116fdf20005b77a89c7fcfcf52ae712e4144f1da3bc9079d76aa
+    name: test-app
+    urls:
+    - https://github.com/thecosmicfrog/helm-charts/releases/download/test-app-0.3.1/test-app-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
     created: "2024-11-15T17:32:59.974317796Z"
     description: Test app
     digest: 395751b87579e8ae19fff62d028327c60371f90e9a1ea018188fdfb8120a5910
@@ -33,4 +41,4 @@ entries:
     urls:
     - https://github.com/thecosmicfrog/test-app/releases/download/test-app-0.0.1/test-app-0.0.1.tgz
     version: 0.0.1
-generated: "2024-11-15T17:32:59.974380453Z"
+generated: "2024-11-15T17:35:23.180998086Z"
