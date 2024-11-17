@@ -1,5 +1,5 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Rollout
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
@@ -8,20 +8,11 @@ metadata:
 spec:
   replicas: 2
   progressDeadlineSeconds: 300
-  progressDeadlineAbort: true
   minReadySeconds: 10
   revisionHistoryLimit: 10
   selector:
     matchLabels:
       app.kubernetes.io/instance: {{ .Release.Name }}
-  strategy:
-    canary:
-      stableService: {{ .Release.Name }}-stable
-      canaryService: {{ .Release.Name }}-canary
-      maxSurge: "25%"
-      maxUnavailable: 0
-      steps:
-        - setWeight: 100
   template:
     metadata:
       labels:
@@ -51,18 +42,25 @@ spec:
             - name: http
               containerPort: 5678
               protocol: TCP
+          resources:
+            requests:
+              cpu: 100m
+              memory: 32Mi
           readinessProbe:
             httpGet:
               path: /
               port: 5678
+              scheme: HTTP
           livenessProbe:
             httpGet:
               path: /
               port: 5678
+              scheme: HTTP
           startupProbe:
             httpGet:
               path: /
               port: 5678
+              scheme: HTTP
           env:
             - name: VERSION
               value: {{ .Chart.Version }}
