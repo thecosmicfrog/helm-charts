@@ -42,6 +42,14 @@ entries:
     - https://github.com/thecosmicfrog/helm-charts/releases/download/test-app-0.1.0/test-app-0.1.0.tgz
     version: 0.1.0
   - apiVersion: v2
+    created: "2024-11-17T22:00:39.269995636Z"
+    description: Test app
+    digest: 430dcc0bd3252d525927a5ca07f841753ff0e067d71495b8ccdb5c4bd3c69b3b
+    name: test-app
+    urls:
+    - https://github.com/thecosmicfrog/helm-charts/releases/download/test-app-0.0.3/test-app-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
     created: "2024-11-13T17:05:54.803303574Z"
     description: Test app
     digest: 45b91c3c44097a9572b57f50ee0989b3f43413cc9f6945a04a662f3f42450ceb
@@ -57,4 +65,4 @@ entries:
     urls:
     - https://github.com/thecosmicfrog/test-app/releases/download/test-app-0.0.1/test-app-0.0.1.tgz
     version: 0.0.1
-generated: "2024-11-17T22:00:34.827194321Z"
+generated: "2024-11-17T22:00:39.270026854Z"
